@@ -103,22 +103,24 @@ export default function TextSummarizer() {
 
   /* ---------- layout ---------- */
   return (
-    <div className="w-full h-[50vh] bg-gray-800 text-white overflow-hidden">
-      <div className="max-w-5xl mx-auto px-4 md:px-6 pt-6">
-        {/* status + progress (fixed position) */}
-        <div className="flex items-center justify-between mb-4 sticky top-0 bg-gray-800/95 backdrop-blur">
-          <span className="text-xs font-mono text-gray-400">{f.status}</span>
-          <div className="flex items-center">
-            <div className="w-28 h-2 bg-gray-700 rounded-full overflow-hidden">
-              <div className="h-full bg-gradient-to-r from-indigo-400 to-blue-400 rounded-full transition-all duration-300" style={{ width: `${f.progress}%` }} />
+    <div className="w-full h-[40vh] bg-gray-800 dark:bg-gray-900 text-white overflow-hidden flex items-center">
+      <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {/* status + progress (combined inline) */}
+        <div className="flex items-center gap-4 mb-6">
+          <span className="text-xs font-mono text-gray-300">{f.status}</span>
+          
+          <div className="flex items-center flex-1 max-w-[140px]">
+            <div className="w-full h-1.5 bg-gray-700 dark:bg-gray-800 rounded-full overflow-hidden">
+              <div className="h-full bg-gradient-to-r from-indigo-400 to-blue-400 rounded-full transition-all duration-300" 
+                   style={{ width: `${f.progress}%` }} />
             </div>
             <span className="ml-2 text-xs font-mono text-gray-400">{f.progress}%</span>
           </div>
         </div>
 
         {/* fixed‑height text area to avoid jumps */}
-        <div className="min-h-[9rem] md:min-h-[10rem] lg:min-h-[11rem]">
-          <p className="text-xl md:text-2xl lg:text-4xl leading-tight font-sans whitespace-pre-wrap">
+        <div className="min-h-[7rem] md:min-h-[8rem] lg:min-h-[9rem]">
+          <p className="text-xl md:text-2xl lg:text-3xl leading-tight font-sans whitespace-pre-wrap">
             {renderText(f)}
           </p>
         </div>
