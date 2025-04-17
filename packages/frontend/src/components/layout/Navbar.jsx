@@ -8,6 +8,17 @@ function Navbar() {
   const location = useLocation();
   const isActive = (path) => location.pathname === path;
   
+  // Smooth scroll handler
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth', 
+        block: 'start'
+      });
+    }
+  };
+  
   return (
     <header className="sticky top-0 z-10 border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-black backdrop-blur-sm bg-opacity-80 dark:bg-opacity-80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -37,6 +48,21 @@ function Navbar() {
                   Home
                 </TextButton>
               </Link>
+              
+              {/* Internal links for scrolling */}
+              <button 
+                onClick={() => scrollToSection('info')} 
+                className="tracking-wide uppercase text-xs px-3 py-2 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 font-medium"
+              >
+                Info
+              </button>
+              
+              <button 
+                onClick={() => scrollToSection('contact')} 
+                className="tracking-wide uppercase text-xs px-3 py-2 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 font-medium"
+              >
+                Contact
+              </button>
               
               <Link to="/demo">
                 <TextButton active={isActive('/demo')} className="tracking-wide uppercase text-xs">
