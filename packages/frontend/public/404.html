@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Synapsis</title>
+  <script type="text/javascript">
+    // GitHub Pages 404 redirect for SPA
+    const path = window.location.pathname;
+    const repo = '/mono';
+    const isGitHubPages = window.location.hostname.includes('github.io');
+    
+    // If this is a GitHub Pages site and the path doesn't match the repo name,
+    // then we need to redirect to the correct path
+    if (isGitHubPages && !path.includes(repo)) {
+      window.location.href = repo + path;
+    } else {
+      // Otherwise, we need to handle client-side routing
+      // Redirect to the index.html page with the full path included
+      const segments = path.replace(repo, '').split('/').filter(Boolean);
+      const redirectPath = segments.length > 0 ? `?path=/${segments.join('/')}` : '';
+      window.location.href = `${repo}/${redirectPath}`;
+    }
+  </script>
+</head>
+<body>
+  <h1>Redirecting...</h1>
+</body>
+</html>

@@ -182,7 +182,7 @@ const ProductBrochure = () => {
                       'Product managers explaining features'
                     ].map((user, i) => (
                       <div key={i} className="flex items-center space-x-2 text-xs text-neutral-600 dark:text-neutral-400">
-                        <span className="font-mono text-neutral-400 dark:text-neutral-500">></span>
+                        <span className="font-mono text-neutral-400 dark:text-neutral-500"></span>
                         <span>{user}</span>
                       </div>
                     ))}
