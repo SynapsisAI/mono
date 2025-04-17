@@ -235,20 +235,20 @@ export default function TextSummarizer() {
             {/* Restart button - bottom left */}
             <button 
               onClick={resetAnimation}
-              className="flex items-center space-x-1.5 px-3 py-1.5 bg-neutral-200 dark:bg-zinc-800 hover:bg-neutral-300 dark:hover:bg-zinc-700 rounded text-sm text-neutral-700 dark:text-neutral-300 transition-colors group"
+              className="flex items-center space-x-1.5 bg-neutral-100 dark:bg-zinc-900 hover:bg-neutral-200 dark:hover:bg-zinc-800 border border-neutral-300 dark:border-neutral-700 rounded px-4 py-1.5 text-sm transition-colors font-mono group"
             >
-              <RefreshCw className="h-3.5 w-3.5 group-hover:rotate-180 transition-transform duration-500" />
-              <span>Restart Summary</span>
+              <RefreshCw className="h-3.5 w-3.5 text-neutral-500 dark:text-neutral-500 group-hover:rotate-180 transition-transform duration-500" />
+              <span className="text-neutral-700 dark:text-neutral-300">$ run --restart-analysis</span>
             </button>
             
             {/* Generate Video button - bottom right */}
             <button 
-              className="flex items-center space-x-1.5 px-3 py-1.5 bg-blue-400 hover:bg-blue-500 dark:bg-blue-400/70 dark:hover:bg-blue-400/90 rounded text-sm text-white transition-colors group"
+              className="flex items-center space-x-1.5 bg-neutral-100 dark:bg-zinc-900 hover:bg-neutral-200 dark:hover:bg-zinc-800 border-2 border-blue-400 dark:border-blue-500 rounded px-4 py-1.5 text-sm transition-colors font-mono group"
             >
-              <span>Generate Video Now!</span>
-              <div className="relative h-3.5 w-3.5">
-                <Video className="h-3.5 w-3.5 relative z-10 group-hover:text-white transition-colors" />
-                <span className="absolute inset-0 bg-blue-300 dark:bg-blue-300/40 rounded-full scale-0 group-hover:scale-150 opacity-0 group-hover:opacity-30 transition-all duration-700 ease-out"></span>
+              <span className="text-blue-600 dark:text-blue-400 font-medium">$ execute --generate-video</span>
+              <div className="relative">
+                <Video className="h-3.5 w-3.5 text-blue-500 dark:text-blue-400 relative z-10" />
+                <span className="absolute inset-0 bg-blue-400/20 dark:bg-blue-400/30 rounded-full scale-0 group-hover:scale-150 opacity-0 group-hover:opacity-100 transition-all duration-700 ease-out"></span>
               </div>
             </button>
           </div>
