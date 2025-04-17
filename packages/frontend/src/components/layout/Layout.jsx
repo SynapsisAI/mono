@@ -1,4 +1,5 @@
 import Navbar from './Navbar';
+import Footer from './Footer';
 
 function Layout({ children }) {
   return (
@@ -7,9 +8,7 @@ function Layout({ children }) {
       <main className="flex-grow">
         {children}
       </main>
-      <footer className="py-6 px-4 text-center text-sm font-mono text-gray-500 dark:text-gray-400">
-        Synapsis © {new Date().getFullYear()}
-      </footer>
+      <Footer />
     </div>
   );
 }
