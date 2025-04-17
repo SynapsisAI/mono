@@ -33,13 +33,13 @@ function Navbar() {
           <div className="flex items-center">
             <nav className="flex items-center mr-2">
               <Link to="/">
-                <TextButton active={isActive('/')}>
+                <TextButton active={isActive('/')} className="tracking-wide uppercase text-xs">
                   Home
                 </TextButton>
               </Link>
               
               <Link to="/demo">
-                <TextButton active={isActive('/demo')}>
+                <TextButton active={isActive('/demo')} className="tracking-wide uppercase text-xs">
                   Demo
                 </TextButton>
               </Link>
