@@ -91,10 +91,11 @@ export default function TextSummarizer() {
     if (f.type === 'final') return <em className="italic">{f.text}</em>;
     if (f.highlight) {
       const [s, e] = f.highlight;
-      return <>{f.text.slice(0, s)}<span className="bg-amber-500/70 text-black rounded px-0.5">{f.text.slice(s, e)}</span>{f.text.slice(e)}</>;
+      // Use a blue that works well in both light and dark modes
+      return <>{f.text.slice(0, s)}<span className="bg-blue-500/30 dark:bg-blue-600/40 rounded px-0.5">{f.text.slice(s, e)}</span>{f.text.slice(e)}</>;
     }
     if (f.cursor !== null) {
-      return <>{f.text.slice(0, f.cursor)}<span className="animate-pulse border-r-2 border-white mx-0.5 inline-block h-[1.2em] align-middle" />{f.text.slice(f.cursor)}</>;
+      return <>{f.text.slice(0, f.cursor)}<span className="animate-pulse border-r-2 border-current mx-0.5 inline-block h-[1.2em] align-middle" />{f.text.slice(f.cursor)}</>;
     }
     return <>{f.text}<span className="animate-pulse ml-0.5">|</span></>;
   };
@@ -103,18 +104,24 @@ export default function TextSummarizer() {
 
   /* ---------- layout ---------- */
   return (
-    <div className="w-full h-[40vh] bg-gray-800 dark:bg-gray-900 text-white overflow-hidden flex items-center">
+    <div className="w-full h-[40vh] bg-gray-100 dark:bg-black text-gray-800 dark:text-gray-100 overflow-hidden flex items-center border-b border-gray-200 dark:border-gray-800">
       <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* status + progress (combined inline) */}
-        <div className="flex items-center gap-4 mb-6">
-          <span className="text-xs font-mono text-gray-300">{f.status}</span>
+        {/* status + progress (combined inline with fixed widths) */}
+        <div className="flex items-center mb-6">
+          {/* Fixed-width status container */}
+          <div className="w-36 mr-4">
+            <span className="text-xs font-mono text-gray-500 dark:text-gray-400">{f.status}</span>
+          </div>
           
-          <div className="flex items-center flex-1 max-w-[140px]">
-            <div className="w-full h-1.5 bg-gray-700 dark:bg-gray-800 rounded-full overflow-hidden">
-              <div className="h-full bg-gradient-to-r from-indigo-400 to-blue-400 rounded-full transition-all duration-300" 
-                   style={{ width: `${f.progress}%` }} />
-            </div>
-            <span className="ml-2 text-xs font-mono text-gray-400">{f.progress}%</span>
+          {/* Fixed-width progress bar */}
+          <div className="w-24 h-1.5 bg-gray-200 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div className="h-full bg-gray-400 dark:bg-gray-600 rounded-full transition-all duration-300" 
+                 style={{ width: `${f.progress}%` }} />
+          </div>
+          
+          {/* Fixed-width percentage container */}
+          <div className="w-10 ml-2">
+            <span className="text-xs font-mono text-gray-500 dark:text-gray-400">{f.progress}%</span>
           </div>
         </div>
 
