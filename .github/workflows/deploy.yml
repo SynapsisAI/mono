@@ -36,9 +36,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 18
-          # Simple caching approach to avoid path resolution issues
-          cache: 'npm'
-          cache-dependency-path: 'packages/frontend/package-lock.json'
+          # Removing caching to avoid errors
 
       - name: Install dependencies
         run: |
