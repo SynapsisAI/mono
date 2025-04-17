@@ -1,0 +1,30 @@
+{
+  "name": "mono",
+  "version": "1.0.0",
+  "description": "Monorepo containing Synapsis website and MVP product - an AI summarisation tool that turns text into video.",
+  "main": "index.js",
+  "workspaces": ["packages/*"],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev:frontend": "cd packages/frontend && npm run dev",
+    "dev:backend": "cd packages/backend && npm run dev",
+    "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\"",
+    "build:frontend": "cd packages/frontend && npm run build",
+    "build": "npm run build:frontend",
+    "start": "cd packages/backend && npm run start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SynapsisAI/mono.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SynapsisAI/mono/issues"
+  },
+  "homepage": "https://github.com/SynapsisAI/mono#readme",
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
