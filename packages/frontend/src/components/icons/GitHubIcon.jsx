@@ -1,5 +1,5 @@
-import githubBlack from '../assets/github-black.svg';
-import githubWhite from '../assets/github-white.svg';
+import githubBlack from '../../assets/github-black.svg';
+import githubWhite from '../../assets/github-white.svg';
 import { useEffect, useState } from 'react';
 
 export default function GitHubIcon({ className = "h-5 w-5" }) {

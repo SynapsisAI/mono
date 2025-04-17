@@ -1,5 +1,5 @@
-import logoBlack from '../assets/logo-black.svg';
-import logoWhite from '../assets/logo-white.svg';
+import logoBlack from '../../assets/logo-black.svg';
+import logoWhite from '../../assets/logo-white.svg';
 import { useEffect, useState } from 'react';
 
 export default function NeuronLogo({ className = "", width = "32px" }) {

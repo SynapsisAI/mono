@@ -1,8 +1,8 @@
 import { Link, useLocation } from 'react-router-dom';
-import { IconButton, TextButton } from './Button';
-import DarkModeToggle from './DarkModeToggle';
-import GitHubIcon from './GitHubIcon';
-import NeuronLogo from './NeuronLogo';
+import { IconButton, TextButton } from '../ui/Button';
+import DarkModeToggle from '../ui/DarkModeToggle';
+import GitHubIcon from '../icons/GitHubIcon';
+import NeuronLogo from '../icons/NeuronLogo';
 
 function Navbar() {
   const location = useLocation();
