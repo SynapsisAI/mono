@@ -48,7 +48,7 @@ jobs:
           cd packages/frontend
           npm run build
         env:
-          VITE_BASE_URL: /mono/
+          VITE_BASE_URL: /
         
       - name: Setup Pages
         uses: actions/configure-pages@v4
